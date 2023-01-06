@@ -1,0 +1,13 @@
+# aliases file
+# remember to source from .bashrc or .zshrc
+# if [ -f ~/.aliases ]; then
+#        . ~/.aliases
+# fi
+
+#BUG: cannot source outside ~/.dockerfiles (check docker context)
+
+alias zshconfig='$EDITOR ~/.zshrc'
+alias reload='source ~/.zshrc'
+alias dnsperftest='docker run --rm -it $(docker build --rm -f ~/.dockerfiles/dnsperftest.dockerFile -q ~/.dockerfiles/)'
+#alias dnsperftest='(cd ~/.dockerfiles && docker run --rm -it $(docker build --rm -f ./dnsperftest.dockerFile -q .))'
+alias firefoxContainer='docker run --rm -it -e DISPLAY=$DISPLAY --net=host $(docker build --rm -f ~/.dockerfiles/firefoxContainer.dockerfile -q ~/.dockerfiles/)'
